@@ -1,16 +1,54 @@
-# React + Vite
+# Remote Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Remote Finder is an open-source web mapping tool for exploring areas that are farther away from mapped buildings and other signs of human presence.
 
-Currently, two official plugins are available:
+The app is intended as a planning and scouting tool. It does not confirm land ownership, legal access, permission, hazards, safety, or suitability for any activity.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Core idea
 
-## React Compiler
+Remote Finder shows an interactive map. Users can load mapped building data for the visible area, adjust a radius, and see shaded avoid zones around those features.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Clear areas are farther away from the selected mapped features.
 
-## Expanding the ESLint configuration
+## Current prototype
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The current prototype includes:
+
+* React + Vite web app
+* Full-screen OpenStreetMap basemap
+* First-load disclaimer popup
+* Adjustable radius slider
+
+## Planned features
+
+* Fetch OpenStreetMap building data for the visible map area
+* Draw building outlines
+* Create shaded avoid zones around mapped features
+* Merge avoid zones into one clean combined shape
+* Add optional filters for different building and human-presence layers
+* Add pins, notes, lines, and drawn areas
+* Add saved projects and shareable view-only links
+* Improve mobile support
+* Explore offline scouting features later
+
+## Important disclaimer
+
+Remote Finder shows distance from mapped features only. It does not confirm land ownership, legal access, permission, hazards, safety, or suitability for any activity.
+
+OpenStreetMap data may be incomplete, outdated, or inconsistently tagged.
+
+## Development status
+
+Remote Finder is in early prototype development.
+
+Current milestone:
+
+**Prototype v0.1 — Core Map Demo**
+
+The first goal is to prove the main concept: a browser map with a radius slider and shaded avoid zones based on mapped building data.
+
+## Open source
+
+Remote Finder is open source under the MIT License.
+
+Contributions, ideas, bug reports, and improvements will be welcome as the project develops.
