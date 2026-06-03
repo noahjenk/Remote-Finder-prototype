@@ -1,53 +1,55 @@
-# Remote Finder
+# Remote Finder Prototype
 
-Remote Finder is an open-source web mapping tool for exploring areas that are farther away from mapped buildings and other signs of human presence.
+> ⚠️ This repository is archived in practice and no longer actively maintained.
 
-The app is intended as a planning and scouting tool. It does not confirm land ownership, legal access, permission, hazards, safety, or suitability for any activity.
+Remote Finder was the original prototype for a browser-based map tool that explored areas farther away from mapped buildings and other signs of human presence.
 
-## Core idea
+The prototype proved the core idea:
 
-Remote Finder shows an interactive map. Users can load mapped building data for the visible area, adjust a radius, and see shaded avoid zones around those features.
+- full-screen OpenStreetMap/Leaflet map
+- first-load disclaimer popup
+- adjustable radius slider
+- manual “Search this area” workflow
+- Overpass query for `building=*`
+- building outlines display
+- buffer avoid zones around buildings
+- merged/dissolved avoid-zone visualisation
+- loading, error, and empty-result states
+- warning when the map has moved since the last search
 
-Clear areas are farther away from the selected mapped features.
+## Project status
 
-## Current prototype
+This repo is now discontinued as the active development repo.
 
-The current prototype includes:
+Future development is moving to **CairnKit**:
 
-* React + Vite web app
-* Leaflet/OpenStreetMap basemap
-* First-load disclaimer popup
-* Adjustable radius slider
-* Manual “Search this area” workflow
-* Overpass query for `building=*`
-* Building outlines display
-* Buffer avoid zones around buildings
-* Merged/dissolved avoid-zone visualisation
-* Loading, error, and empty-result states
-* Warning when the map has moved since last search
+> **CairnKit** — *A modular map toolkit for finding and saving places.*
 
-## Not current priorities
+CairnKit will rebuild the idea with a cleaner architecture based around modular tools, map layers, data-source adapters, storage adapters, and saved places.
 
-The prototype does not currently focus on:
+## Why this repo is discontinued
 
-* Dark mode
-* Accounts or saved projects
-* Sharing links
-* Mobile app support
-* Offline mode
-* Satellite imagery layers
-* Direct OpenStreetMap editing
-* Complex remoteness scoring or “best area” recommendations
+Remote Finder was useful as a fast prototype, but the project direction has grown beyond a single Remote Finder tool.
+
+Rather than continuing to patch this prototype, the project is being restarted as CairnKit so the app can grow in a more considered and maintainable way.
+
+The new direction treats Rural Area Finder as one tool inside a broader map toolkit, rather than making it the whole application.
+
+## Development notice
+
+Do not use this repository for new feature development.
+
+Open issues in this repo are being closed because future work will be reconsidered and rewritten as smaller CairnKit tasks in the new repository.
 
 ## Important disclaimer
 
-Remote Finder shows distance from mapped features only. It does not confirm land ownership, legal access, permission, hazards, safety, or suitability for any activity.
+Remote Finder only shows distance from mapped features. It does not confirm land ownership, legal access, permission, hazards, safety, or suitability for any activity.
 
 OpenStreetMap data may be incomplete, outdated, or inconsistently tagged.
 
-## Development
+## Running the old prototype
 
-To run the app locally:
+The prototype can still be run locally for reference:
 
 ```bash
 npm install
@@ -56,20 +58,6 @@ npm run dev
 
 Open the local Vite URL shown in the terminal.
 
-## Development status
-
-Remote Finder is in early prototype development.
-
-Current milestone:
-
-**Prototype v0.1 — Core Map Demo**
-
-The goal is to prove the main workflow:
-
-map → radius slider → manual search → building outlines → avoid-zone buffers → merged shaded areas.
-
-## Open source
+## Licence
 
 Remote Finder is open source under the MIT License.
-
-Contributions, ideas, bug reports, and improvements are welcome as the project develops.
